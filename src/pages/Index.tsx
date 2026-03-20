@@ -268,17 +268,23 @@ const Index = () => {
           </div>
         )}
 
-        {/* Poster button */}
-        <button
-          className="btn-neon"
-          onClick={() => navigate("/poster")}
-          style={{
-            width:"100%", padding:"16px", borderRadius:14, marginTop:24,
-            fontFamily:"'Russo One', sans-serif", fontSize:16, letterSpacing:3
-          }}
-        >
-          🎉 ПОСМОТРЕТЬ АФИШУ
-        </button>
+        {/* Poster + Warmup buttons */}
+        <div style={{ display:"flex", flexDirection:"column", gap:10, marginTop:24 }}>
+          <button
+            className="btn-neon"
+            onClick={() => navigate("/poster")}
+            style={{ width:"100%", padding:"16px", borderRadius:14, fontFamily:"'Russo One', sans-serif", fontSize:16, letterSpacing:3 }}
+          >
+            🎉 ПОСМОТРЕТЬ АФИШУ
+          </button>
+          <button
+            className="btn-outline"
+            onClick={() => navigate("/warmup")}
+            style={{ width:"100%", padding:"14px", borderRadius:14, fontFamily:"'Russo One', sans-serif", fontSize:14, letterSpacing:3 }}
+          >
+            📣 ТЕКСТЫ ДЛЯ РАЗОГРЕВА
+          </button>
+        </div>
 
         {/* Download avatar button */}
         <div style={{ marginTop:20, borderTop:"1px solid rgba(255,255,255,0.07)", paddingTop:24, display:"flex", alignItems:"center", justifyContent:"space-between", flexWrap:"wrap", gap:12 }}>
