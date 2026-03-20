@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 const AVATAR_URL = "https://cdn.poehali.dev/projects/a9ac6006-99d5-42fe-a6c6-ce06d974cac5/files/4e5d5169-7e7d-4e93-a440-2112cbfab30d.jpg";
 
@@ -28,6 +29,7 @@ const Index = () => {
   const [loaded, setLoaded] = useState(false);
   const [copied, setCopied] = useState(false);
   const [activeTab, setActiveTab] = useState<"site" | "tg">("site");
+  const navigate = useNavigate();
 
   useEffect(() => {
     setTimeout(() => setLoaded(true), 100);
@@ -266,8 +268,20 @@ const Index = () => {
           </div>
         )}
 
+        {/* Poster button */}
+        <button
+          className="btn-neon"
+          onClick={() => navigate("/poster")}
+          style={{
+            width:"100%", padding:"16px", borderRadius:14, marginTop:24,
+            fontFamily:"'Russo One', sans-serif", fontSize:16, letterSpacing:3
+          }}
+        >
+          🎉 ПОСМОТРЕТЬ АФИШУ
+        </button>
+
         {/* Download avatar button */}
-        <div style={{ marginTop:36, borderTop:"1px solid rgba(255,255,255,0.07)", paddingTop:28, display:"flex", alignItems:"center", justifyContent:"space-between", flexWrap:"wrap", gap:12 }}>
+        <div style={{ marginTop:20, borderTop:"1px solid rgba(255,255,255,0.07)", paddingTop:24, display:"flex", alignItems:"center", justifyContent:"space-between", flexWrap:"wrap", gap:12 }}>
           <div style={{ fontFamily:"'Rubik', sans-serif", fontSize:13, color:"rgba(255,255,255,0.35)", letterSpacing:1 }}>
             Аватарка для Telegram
           </div>
